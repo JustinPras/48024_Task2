@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:controller="controller.SlipController" prefHeight="338.0" prefWidth="600.0" styleClass="background" alignment="CENTER"  
+          xmlns:fx="http://javafx.com/fxml/1" >
+    <padding>
+        <Insets top="10" bottom="10" left="10" right="10" />
+    </padding>
+
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="40.0" percentWidth="40.0" prefWidth="40.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="30.0" percentWidth="30.0" prefWidth="30.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="40.0" percentWidth="40.0" prefWidth="40.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="30.0" percentWidth="30.0" prefWidth="30.0" />
+    </columnConstraints>
+
+    <Label styleClass="label-h2" text="Tuition Slip:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <Label text="Credits:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <Label text="TotalFee:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <Label text="Net Fee:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <Label text="Pay Per Credit:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+    <Label text="Scholarship:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+    <Label text="Deduction:" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+
+    <Text styleClass="text-out" text="${controller.student.credits + ' credits'}" GridPane.columnIndex="1" GridPane.rowIndex="1"/>  
+    <Text styleClass="text-out" fx:id="totalFeeTf" GridPane.columnIndex="1" GridPane.rowIndex="2"/>  
+    <Text styleClass="text-out" fx:id="netFeeTf" GridPane.columnIndex="1" GridPane.rowIndex="3"/>  
+    <Text styleClass="text-out" fx:id="payPerCreditTf" GridPane.columnIndex="3" GridPane.rowIndex="1"/>  
+    <Text styleClass="text-out" fx:id="scholarshipTf" GridPane.columnIndex="3" GridPane.rowIndex="2"/>  
+    <Text styleClass="text-out"  fx:id="deductionTf" GridPane.columnIndex="3" GridPane.rowIndex="3"/>  
+     
+    <HBox prefHeight="100" prefWidth="50"  GridPane.columnIndex="1" GridPane.rowIndex="5"  GridPane.columnSpan="2"  alignment="BOTTOM_CENTER">
+        <Button text="Close" fx:id="closeBtn" onAction="#handleClose"  />
+    </HBox>
+
+    <stylesheets>
+          <URL value="@tmsfx.css"/>
+    </stylesheets>
+
+</GridPane>
